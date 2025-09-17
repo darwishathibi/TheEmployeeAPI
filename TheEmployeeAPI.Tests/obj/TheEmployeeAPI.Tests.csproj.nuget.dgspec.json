@@ -1,0 +1,181 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI.Tests/TheEmployeeAPI.Tests.csproj": {}
+  },
+  "projects": {
+    "/Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI.Tests/TheEmployeeAPI.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI.Tests/TheEmployeeAPI.Tests.csproj",
+        "projectName": "TheEmployeeAPI.Tests",
+        "projectPath": "/Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI.Tests/TheEmployeeAPI.Tests.csproj",
+        "packagesPath": "/Users/darwishathibi/.nuget/packages/",
+        "outputPath": "/Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/darwishathibi/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI/TheEmployeeAPI.csproj": {
+                "projectPath": "/Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI/TheEmployeeAPI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[8.0.20, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.8.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.9.3, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.413/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI/TheEmployeeAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI/TheEmployeeAPI.csproj",
+        "projectName": "TheEmployeeAPI",
+        "projectPath": "/Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI/TheEmployeeAPI.csproj",
+        "packagesPath": "/Users/darwishathibi/.nuget/packages/",
+        "outputPath": "/Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/darwishathibi/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[8.0.20, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.19, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.9.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.413/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
