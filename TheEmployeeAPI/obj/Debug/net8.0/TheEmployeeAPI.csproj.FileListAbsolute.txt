@@ -363,3 +363,4 @@
 /Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI/obj/Debug/net8.0/TheEmployeeAPI.pdb
 /Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI/obj/Debug/net8.0/TheEmployeeAPI.genruntimeconfig.cache
 /Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI/obj/Debug/net8.0/ref/TheEmployeeAPI.dll
+/Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI/obj/Debug/net8.0/TheEmployeeAPI.sourcelink.json

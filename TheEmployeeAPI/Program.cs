@@ -1,10 +1,7 @@
+using TheEmployeeAPI;
+using TheEmployeeAPI.Abstractions;
 using TheEmployeeAPI.Employees;
 
-var employees = new List<Employee>
-{
-    new Employee { Id = 1, FirstName = "John", LastName = "Doe", SocialSecurityNumber = "123-45-6789" },
-    new Employee { Id = 2, FirstName = "Jane", LastName = "Doe", SocialSecurityNumber = "987-65-4321" }
-};
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<IRepository<Employee>, EmployeeRepository>();
 
 var app = builder.Build();
 
@@ -26,8 +24,8 @@ if (app.Environment.IsDevelopment())
 var employeeRoute = app.MapGroup("/employees");
 
 // Get all employees
-employeeRoute.MapGet(string.Empty, () => {
-    return Results.Ok(employees.Select(employee => new GetEmployeeResponse {
+employeeRoute.MapGet(string.Empty, (IRepository<Employee> repository) => {
+    return Results.Ok(repository.GetAll().Select(employee => new GetEmployeeResponse {
         FirstName = employee.FirstName,
         LastName = employee.LastName,
         Address1 = employee.Address1,
@@ -41,8 +39,8 @@ employeeRoute.MapGet(string.Empty, () => {
 });
 
 // Get employee by ID
-employeeRoute.MapGet("{id:int}", (int id) => {
-    var employee = employees.SingleOrDefault(e => e.Id == id);
+employeeRoute.MapGet("{id:int}", (int id, IRepository<Employee> repository) => {
+    var employee = repository.GetById(id);
     if (employee == null)
     {
         return Results.NotFound();
@@ -62,9 +60,8 @@ employeeRoute.MapGet("{id:int}", (int id) => {
 });
 
 // Create a new employee
-employeeRoute.MapPost(string.Empty, (CreateEmployeeRequest employee) => {
+employeeRoute.MapPost(string.Empty, (CreateEmployeeRequest employee, IRepository<Employee> repository) => {
     var newEmployee = new Employee {
-        Id = employees.Max(e => e.Id) + 1,
         FirstName = employee.FirstName,
         LastName = employee.LastName,
         SocialSecurityNumber = employee.SocialSecurityNumber,
@@ -76,13 +73,13 @@ employeeRoute.MapPost(string.Empty, (CreateEmployeeRequest employee) => {
         PhoneNumber = employee.PhoneNumber,
         Email = employee.Email
     };
-    employees.Add(newEmployee);
+    repository.Create(newEmployee);
     return Results.Created($"/employees/{newEmployee.Id}", employee);
 });
 
 // Update an existing employee
-employeeRoute.MapPut("{id}", (UpdateEmployeeRequest employee, int id) => {
-    var existingEmployee = employees.SingleOrDefault(e => e.Id == id);
+employeeRoute.MapPut("{id}", (UpdateEmployeeRequest employee, int id, IRepository<Employee> repository) => {
+    var existingEmployee = repository.GetById(id);
     if (existingEmployee == null)
     {
         return Results.NotFound();
@@ -96,6 +93,7 @@ employeeRoute.MapPut("{id}", (UpdateEmployeeRequest employee, int id) => {
     existingEmployee.PhoneNumber = employee.PhoneNumber;
     existingEmployee.Email = employee.Email;
 
+    repository.Update(existingEmployee);
     return Results.Ok(existingEmployee);
 });
 
