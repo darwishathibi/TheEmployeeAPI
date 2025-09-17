@@ -1,8 +1,5 @@
-public class GetEmployeeResponse
+public class UpdateEmployeeRequest
 {
-    public required string FirstName { get; set; }
-    public required string LastName { get; set; }
-
     public string? Address1 { get; set; }
     public string? Address2 { get; set; }
     public string? City { get; set; }
