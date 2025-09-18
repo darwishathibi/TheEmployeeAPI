@@ -23,6 +23,10 @@ builder.Services.AddControllers(options =>
 {
     options.Filters.Add<FluentValidationFilter>();
 });
+builder.Services.AddSwaggerGen(options =>
+{
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "TheEmployeeAPI.xml"));
+});
 
 var app = builder.Build();
 

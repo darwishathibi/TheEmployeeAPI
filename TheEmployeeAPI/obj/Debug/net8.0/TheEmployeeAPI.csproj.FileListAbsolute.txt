@@ -367,3 +367,5 @@
 /Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI/bin/Debug/net8.0/FluentValidation.dll
 /Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI/bin/Debug/net8.0/FluentValidation.AspNetCore.dll
 /Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll
+/Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI/bin/Debug/net8.0/TheEmployeeAPI.xml
+/Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI/obj/Debug/net8.0/TheEmployeeAPI.xml

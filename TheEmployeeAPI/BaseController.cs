@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
 [Route("api/[controller]")]
+[Produces("application/json")]
 public abstract class BaseController :ControllerBase 
 {
     protected async Task<ValidationResult> ValidateAsync<T>(T instance)
