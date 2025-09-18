@@ -437,3 +437,6 @@
 /Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI.Tests/obj/Debug/net8.0/TheEmployeeAPI.Tests.genruntimeconfig.cache
 /Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI.Tests/obj/Debug/net8.0/ref/TheEmployeeAPI.Tests.dll
 /Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI.Tests/obj/Debug/net8.0/TheEmployeeAPI.Tests.sourcelink.json
+/Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI.Tests/bin/Debug/net8.0/FluentValidation.dll
+/Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI.Tests/bin/Debug/net8.0/FluentValidation.AspNetCore.dll
+/Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI.Tests/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll

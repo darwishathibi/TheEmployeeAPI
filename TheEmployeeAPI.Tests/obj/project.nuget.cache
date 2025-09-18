@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "remo/3sbRU4=",
+  "dgSpecHash": "J0HCkU2fPD0=",
   "success": true,
   "projectFilePath": "/Users/darwishathibi/Documents/developments/leisure/TheEmployeeAPI/TheEmployeeAPI.Tests/TheEmployeeAPI.Tests.csproj",
   "expectedPackageFiles": [
     "/Users/darwishathibi/.nuget/packages/coverlet.collector/6.0.1/coverlet.collector.6.0.1.nupkg.sha512",
+    "/Users/darwishathibi/.nuget/packages/fluentvalidation/12.0.0/fluentvalidation.12.0.0.nupkg.sha512",
+    "/Users/darwishathibi/.nuget/packages/fluentvalidation.aspnetcore/11.3.1/fluentvalidation.aspnetcore.11.3.1.nupkg.sha512",
+    "/Users/darwishathibi/.nuget/packages/fluentvalidation.dependencyinjectionextensions/12.0.0/fluentvalidation.dependencyinjectionextensions.12.0.0.nupkg.sha512",
     "/Users/darwishathibi/.nuget/packages/microsoft.aspnetcore.mvc.testing/8.0.20/microsoft.aspnetcore.mvc.testing.8.0.20.nupkg.sha512",
     "/Users/darwishathibi/.nuget/packages/microsoft.aspnetcore.openapi/8.0.19/microsoft.aspnetcore.openapi.8.0.19.nupkg.sha512",
     "/Users/darwishathibi/.nuget/packages/microsoft.aspnetcore.testhost/8.0.20/microsoft.aspnetcore.testhost.8.0.20.nupkg.sha512",
