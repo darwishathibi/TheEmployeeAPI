@@ -63,12 +63,7 @@ public class EmployeesController : BaseController
     [HttpPost]
     public async Task<IActionResult> CreateEmployee([FromBody] CreateEmployeeRequest employeeRequest)
     {
-        var validationResults = await ValidateAsync(employeeRequest);
-        if (!validationResults.IsValid)
-        {
-            return ValidationProblem(validationResults.ToModelStateDictionary());
-        }
-
+        await Task.CompletedTask;
         var newEmployee = new Employee
         {
             FirstName = employeeRequest.FirstName!,
