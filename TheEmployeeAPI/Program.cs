@@ -4,17 +4,32 @@ using TheEmployeeAPI;
 
 var employees = new List<Employee>
 {
-    new Employee { Id = 1, FirstName = "John", LastName = "Doe" },
+    new Employee { Id = 1, FirstName = "John", LastName = "Doe", Benefits = new List<EmployeeBenefits>
+    {
+        new EmployeeBenefits
+        {
+            BenefitType = BenefitType.Health, Cost = 100
+        },
+        new EmployeeBenefits
+        {
+            BenefitType = BenefitType.Dental, Cost = 50
+        }
+    }},
     new Employee { Id = 2, FirstName = "Jane", LastName = "Doe" }
 };
 
-var builder = WebApplication.CreateBuilder(args);
+var employeeRespository = new EmployeeRepository();
+foreach (var e in employees)
+{
+    employeeRespository.Create(e);
+}
 
+var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSingleton<IRepository<Employee>, EmployeeRepository>();
+builder.Services.AddSingleton<IRepository<Employee>>(employeeRespository);
 builder.Services.AddProblemDetails();
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 builder.Services.AddControllers();
