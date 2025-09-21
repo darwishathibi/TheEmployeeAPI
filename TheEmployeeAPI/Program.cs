@@ -1,5 +1,6 @@
 using TheEmployeeAPI.Abstractions;
 using FluentValidation;
+using Microsoft.EntityFrameworkCore;
 using TheEmployeeAPI;
 
 var employees = new List<Employee>
@@ -42,6 +43,8 @@ builder.Services.AddSwaggerGen(options =>
 {
     options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "TheEmployeeAPI.xml"));
 });
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
