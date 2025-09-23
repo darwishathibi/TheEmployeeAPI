@@ -3,31 +3,17 @@ using System.Net.Http.Json;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
-using TheEmployeeAPI.Abstractions;
 
 namespace TheEmployeeAPI.Tests;
 
-public class BasicTests : IClassFixture<WebApplicationFactory<Program>>
+public class BasicTests : IClassFixture< CustomWebApplicationFactory>
 {
-    private readonly WebApplicationFactory<Program> _factory;
+    private readonly CustomWebApplicationFactory _factory;
     private readonly int _employeeForAddressTest;
 
-    public BasicTests(WebApplicationFactory<Program> factory)
+    public BasicTests(CustomWebApplicationFactory factory)
     {
         _factory = factory;
-
-        var repo = _factory.Services.GetRequiredService<IRepository<Employee>>();
-        var employee = new Employee { 
-            FirstName = "John", 
-            LastName = "Doe", 
-            Address1 = "wevbwe", 
-            Benefits = new List<EmployeeBenefits>
-                {
-                    new EmployeeBenefits { BenefitType = BenefitType.Health, Cost = 100 },
-                    new EmployeeBenefits { BenefitType = BenefitType.Dental, Cost = 50 }
-                } };
-        repo.Create(employee);
-        _employeeForAddressTest = repo.GetAll().First().Id;
     }
 
     [Fact]
@@ -37,6 +23,18 @@ public class BasicTests : IClassFixture<WebApplicationFactory<Program>>
         var response = await client.GetAsync("/api/employees");
 
         response.EnsureSuccessStatusCode();
+    }
+    
+    [Fact]
+    public async Task GetAllEmployees_WithFilter_ReturnsOneResult()
+    {
+        var client = _factory.CreateClient();
+        var response = await client.GetAsync("/api/employees?FirstNameContains=John");
+
+        response.EnsureSuccessStatusCode();
+
+        var employees = await response.Content.ReadFromJsonAsync<IEnumerable<GetEmployeeResponse>>();
+        Assert.Single(employees);
     }
 
     [Fact]
@@ -48,6 +46,7 @@ public class BasicTests : IClassFixture<WebApplicationFactory<Program>>
         response.EnsureSuccessStatusCode();
     }
 
+    /*
     [Fact]
     public async Task CreateEmployee_ReturnsCreatedResult()
     {
@@ -118,4 +117,6 @@ public class BasicTests : IClassFixture<WebApplicationFactory<Program>>
         var benefits = await response.Content.ReadFromJsonAsync<IEnumerable<GetEmployeeResponseEmployeeBenefit>>();
         Assert.Equal(2, benefits.Count());
     }
+    */
 }
+

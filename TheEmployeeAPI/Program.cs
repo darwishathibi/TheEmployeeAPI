@@ -1,4 +1,3 @@
-using TheEmployeeAPI.Abstractions;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using TheEmployeeAPI;
@@ -19,18 +18,17 @@ var employees = new List<Employee>
     new Employee { Id = 2, FirstName = "Jane", LastName = "Doe" }
 };
 
-var employeeRespository = new EmployeeRepository();
-foreach (var e in employees)
-{
-    employeeRespository.Create(e);
-}
+// var employeeRespository = new EmployeeRepository();
+// foreach (var e in employees)
+// {
+//     employeeRespository.Create(e);
+// }
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSingleton<IRepository<Employee>>(employeeRespository);
 builder.Services.AddProblemDetails();
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 builder.Services.AddControllers();
@@ -50,7 +48,8 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    SeedData.Seed(services);
+    SeedData.MigrateAndSeed(services);
+    
 }
 
 // Configure the HTTP request pipeline.

@@ -16,6 +16,7 @@ public class CreateEmployeeRequest
     public string? Email { get; set; }
 }
 
+
 // FluentValidation validator for CreateEmployeeRequest class
 public class CreateEmployeeRequestValidator : AbstractValidator<CreateEmployeeRequest>
 {
