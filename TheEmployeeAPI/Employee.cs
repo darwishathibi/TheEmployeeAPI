@@ -1,4 +1,4 @@
-public class Employee 
+public class Employee : AuditableEntity
 {
 
     public int Id { get; set; }
@@ -15,6 +15,15 @@ public class Employee
     public string? Email { get; set; }
     public List<EmployeeBenefit> Benefits { get; set; } = new List<EmployeeBenefit>();
 }
+
+public abstract class AuditableEntity
+{
+    public string? CreatedBy { get; set; }
+    public DateTime? CreatedOn { get; set; }
+    public string? LastModifiedBy { get; set; }
+    public DateTime? LastModifiedOn { get; set; }
+}
+
 
 public class Benefit
 {
