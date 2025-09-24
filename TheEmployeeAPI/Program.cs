@@ -2,22 +2,6 @@ using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using TheEmployeeAPI;
 
-var employees = new List<Employee>
-{
-    new Employee { Id = 1, FirstName = "John", LastName = "Doe", Benefits = new List<EmployeeBenefits>
-    {
-        new EmployeeBenefits
-        {
-            BenefitType = BenefitType.Health, Cost = 100
-        },
-        new EmployeeBenefits
-        {
-            BenefitType = BenefitType.Dental, Cost = 50
-        }
-    }},
-    new Employee { Id = 2, FirstName = "Jane", LastName = "Doe" }
-};
-
 // var employeeRespository = new EmployeeRepository();
 // foreach (var e in employees)
 // {
@@ -42,7 +26,10 @@ builder.Services.AddSwaggerGen(options =>
     options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "TheEmployeeAPI.xml"));
 });
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+{
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+});
 
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())

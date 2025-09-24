@@ -5,7 +5,7 @@ namespace TheEmployeeAPI;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("[controller]")]
 [Produces("application/json")]
 public abstract class BaseController :ControllerBase 
 {
